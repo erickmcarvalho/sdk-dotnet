@@ -364,8 +364,34 @@ namespace StarkBank
             string receiverName = json.receiverName;
             string receiverTaxID = json.receiverTaxId;
             List<string> tags = json.tags.ToObject<List<string>>();
-            List<Dictionary<string, object>> descriptions = json.descriptions.ToObject<List<Dictionary<string, object>>>();
-            List<Dictionary<string, object>> discounts = json.discounts.ToObject<List<Dictionary<string, object>>>();
+
+            List<Dictionary<string, object>> descriptionDicts = json.descriptions.ToObject<List<Dictionary<string, object>>>();
+            List<Description> descriptions = new List<Description>{ };
+            foreach(Dictionary<string, object> descriptionDict in descriptionDicts)
+            {
+                if (descriptionDict.ContainsKey("amount"))
+                {
+                    descriptions.Add(new Description(
+                        text: (string)descriptionDict["text"],
+                        amount: (int)descriptionDict["amount"]
+                    ));
+                } else
+                {
+                    descriptions.Add(new Description(text: (string)descriptionDict["text"]));
+                }
+                    
+            }
+
+            List<Dictionary<string, object>> discountDicts = json.discounts.ToObject<List<Dictionary<string, object>>>();
+            List<Discount> discounts = new List<Discount> { };
+            foreach (Dictionary<string, object> discountDict in discountDicts)
+            {
+                discounts.Add(new Discount(
+                    date: (DateTime)discountDict["date"],
+                    percentage: (double)discountDict["percentage"]
+                ));
+            }
+
             string id = json.id;
             int fee = json.fee;
             string line = json.line;
