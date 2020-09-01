@@ -142,7 +142,7 @@ namespace StarkBank
         /// </list>
         /// Parameters (optional):
         /// <list>
-        ///     <item>user [Project object]: Project object. Not necessary if StarkBank.User.Default was set before function call</item>
+        ///     <item>user [Organization/Project object]: Organization or Project object. Not necessary if StarkBank.Settings.User was set before function call</item>
         /// </list>
         /// <br/>
         /// Return:
@@ -173,7 +173,7 @@ namespace StarkBank
         /// </list>
         /// Parameters (optional):
         /// <list>
-        ///     <item>user [Project object]: Project object. Not necessary if StarkBank.User.Default was set before function call</item>
+        ///     <item>user [Organization/Project object]: Organization or Project object. Not necessary if StarkBank.Settings.User was set before function call</item>
         /// </list>
         /// <br/>
         /// Return:
@@ -235,7 +235,7 @@ namespace StarkBank
         /// <br/>
         /// Parameters (optional):
         /// <list>
-        ///     <item>user [Project object]: Project object. Not necessary if StarkBank.User.Default was set before function call</item>
+        ///     <item>user [Organization/Project object]: Organization or Project object. Not necessary if StarkBank.Settings.User was set before function call</item>
         /// </list>
         /// <br/>
         /// Return:
@@ -310,7 +310,7 @@ namespace StarkBank
         ///     <item>amount [long integer]: nominal amount charged by the Invoice. ex: 100 (R$1.00)</item>
         ///     <item>due [DateTime, default today + 2 days]: Invoice due date in UTC ISO format. ex: DateTime(2020, 3, 10, 10, 30, 12, 15)</item>
         ///     <item>expiration [long integer, default null]: time interval in seconds between the due date and the expiration date. ex 123456789</item>
-        ///     <item>user [Project object]: Project object. Not necessary if StarkBank.User.Default was set before function call</item>
+        ///     <item>user [Organization/Project object]: Organization or Project object. Not necessary if StarkBank.Settings.User was set before function call</item>
         /// </list>
         /// <br/>
         /// Return:
@@ -348,7 +348,7 @@ namespace StarkBank
         /// Parameters(optional) :
         /// <list>
         ///     <item>size [integer, default 7.0]: number of pixels in each "box" of the QR code. Minimum = 1, maximum = 50. ex: 12</item>
-        ///     <item>user [Project object]: Project object. Not necessary if StarkBank.User.Default was set before function call</item>
+        ///     <item>user [Organization/Project object]: Organization or Project object. Not necessary if StarkBank.Settings.User was set before function call</item>
         /// </list>
         /// <br/>
         /// Return:
